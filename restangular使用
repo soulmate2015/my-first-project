@@ -1,0 +1,14 @@
+配置restangular
+
+配置restangular是体验restangular服务的前提
+
+// Add Restangular as a dependency to your app
+angular.module('your-app', ['restangular']);
+
+// Inject Restangular into your controller
+angular.module('your-app').controller('MainCtrl', function($scope, Restangular) {
+  // ...
+});
+
+
+
