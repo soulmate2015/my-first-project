@@ -1,14 +1,29 @@
-配置restangular
+1.配置restangular
 
 配置restangular是体验restangular服务的前提
 
-// Add Restangular as a dependency to your app
+// 将restangular当做一个依赖添加到你的app中
 angular.module('your-app', ['restangular']);
 
-// Inject Restangular into your controller
+// 将restangular服务注入你的控制器
 angular.module('your-app').controller('MainCtrl', function($scope, Restangular) {
   // ...
 });
 
+restangular服务可以注入到你的控制器和指令中。有一点需要注意的是，当restangular当作一个依赖添加到你的app中时，
+使用的是小写样式“restangular”，当restangular服务注入到控制器或指令中去时，使用的是大写的样式“Restangular”。
 
 
+2.使用restangular
+
+有三种方式去创建主要的restangular服务对象
+
+// 声明主要的路由,路由对象是一个资源域
+// accounts 是一个路由地址
+Restangular.all('accounts')
+
+// 声明主要的路由,路由带有一个参数
+Restangular.one('accounts', 1234)
+
+// Gets a list of all of those accounts
+Restangular.several('accounts', 1234, 123, 12345);
